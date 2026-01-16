@@ -27,7 +27,28 @@ The crates-dep.txt is from https://github.com/Starry-OS/StarryOS
 ```
 git clone git@github.com:Starry-OS/StarryOS.git
 cd StarryOS
+# setup development env ...
+
 cargo tree >crates-dep.txt
+
+# use cargotree2mermaid.py -i SOME-PATH/crates-dep.txt ...
 ```
 
-The crates in black.list.txt are not from rcore-os, arceos-org, Starry-OS, arceos-hypervisor github repos.
+The crates-dep.txt is from https://github.com/arceos-org/arceos-apps
+
+```
+git clone git@github.com:arceos-org/arceos-apps.git
+cd arceos-apps
+# setup development env ...
+
+cargo tree -p arceos-helloworld --target riscv64gc-unknown-none-elf --features "axstd/defplat axstd/log-level-info" >crates-dep.txt
+
+#OR
+cargo tree -p arceos-helloworld --target aarch64-unknown-none-softfloat --features "axstd/defplat axstd/log-level-info" >crates-dep.txt
+# use cargotree2mermaid.py -i SOME-PATH/crates-dep.txt ...
+```
+
+## NOTICE
+The crates in blacklist.txt(as input file for cargotree2mermaid.py) are not from github repos: rcore-os, arceos-org, Starry-OS, arceos-hypervisor, etc.
+
+The crates in output file(e.g. whitelist.txt) for cargotree2mermaid.py are from  github repos: rcore-os, arceos-org, Starry-OS, arceos-hypervisor, etc.
