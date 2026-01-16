@@ -1,0 +1,591 @@
+starry v0.1.0 (/home/chyyuu/thecodes/StarryOS)
+├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver)
+│   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc)
+│   │   ├── allocator v0.1.2 (https://github.com/arceos-org/allocator.git?tag=v0.1.2#922e72a7)
+│   │   │   ├── axerrno v0.1.2
+│   │   │   │   ├── axerrno v0.2.2
+│   │   │   │   │   ├── log v0.4.29
+│   │   │   │   │   └── strum v0.27.2
+│   │   │   │   │       └── strum_macros v0.27.2 (proc-macro)
+│   │   │   │   │           ├── heck v0.5.0
+│   │   │   │   │           ├── proc-macro2 v1.0.103
+│   │   │   │   │           │   └── unicode-ident v1.0.22
+│   │   │   │   │           ├── quote v1.0.42
+│   │   │   │   │           │   └── proc-macro2 v1.0.103 (*)
+│   │   │   │   │           └── syn v2.0.111
+│   │   │   │   │               ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │               ├── quote v1.0.42 (*)
+│   │   │   │   │               └── unicode-ident v1.0.22
+│   │   │   │   └── log v0.4.29
+│   │   │   ├── bitmap-allocator v0.2.1
+│   │   │   │   └── bit_field v0.10.3
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── rlsf v0.2.1
+│   │   │   │   ├── cfg-if v1.0.4
+│   │   │   │   ├── const-default v1.0.0
+│   │   │   │   ├── libc v0.2.178
+│   │   │   │   └── svgbobdoc v0.3.0 (proc-macro)
+│   │   │   │       ├── base64 v0.13.1
+│   │   │   │       ├── proc-macro2 v1.0.103 (*)
+│   │   │   │       ├── quote v1.0.42 (*)
+│   │   │   │       ├── syn v1.0.109
+│   │   │   │       │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │       │   ├── quote v1.0.42 (*)
+│   │   │   │       │   └── unicode-ident v1.0.22
+│   │   │   │       └── unicode-width v0.1.14
+│   │   │   └── slab_allocator v0.3.1 (https://github.com/arceos-org/slab_allocator.git?tag=v0.3.1#3c13499d)
+│   │   │       └── buddy_system_allocator v0.10.0
+│   │   ├── axerrno v0.2.2 (*)
+│   │   ├── cfg-if v1.0.4
+│   │   ├── kspin v0.1.1
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   └── kernel_guard v0.1.3
+│   │   │       ├── cfg-if v1.0.4
+│   │   │       └── crate_interface v0.1.4 (proc-macro)
+│   │   │           ├── proc-macro2 v1.0.103 (*)
+│   │   │           ├── quote v1.0.42 (*)
+│   │   │           └── syn v2.0.111 (*)
+│   │   ├── log v0.4.29
+│   │   ├── memory_addr v0.4.1
+│   │   └── strum v0.27.2 (*)
+│   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig)
+│   │   └── axconfig-macros v0.2.0 (proc-macro)
+│   │       ├── axconfig-gen v0.2.0
+│   │       │   ├── clap v4.5.53
+│   │       │   │   ├── clap_builder v4.5.53
+│   │       │   │   │   ├── anstream v0.6.21
+│   │       │   │   │   │   ├── anstyle v1.0.13
+│   │       │   │   │   │   ├── anstyle-parse v0.2.7
+│   │       │   │   │   │   │   └── utf8parse v0.2.2
+│   │       │   │   │   │   ├── anstyle-query v1.1.5
+│   │       │   │   │   │   ├── colorchoice v1.0.4
+│   │       │   │   │   │   ├── is_terminal_polyfill v1.70.2
+│   │       │   │   │   │   └── utf8parse v0.2.2
+│   │       │   │   │   ├── anstyle v1.0.13
+│   │       │   │   │   ├── clap_lex v0.7.6
+│   │       │   │   │   └── strsim v0.11.1
+│   │       │   │   └── clap_derive v4.5.49 (proc-macro)
+│   │       │   │       ├── heck v0.5.0
+│   │       │   │       ├── proc-macro2 v1.0.103 (*)
+│   │       │   │       ├── quote v1.0.42 (*)
+│   │       │   │       └── syn v2.0.111 (*)
+│   │       │   └── toml_edit v0.22.27
+│   │       │       ├── indexmap v2.12.1
+│   │       │       │   ├── equivalent v1.0.2
+│   │       │       │   └── hashbrown v0.16.1
+│   │       │       ├── toml_datetime v0.6.11
+│   │       │       ├── toml_write v0.1.2
+│   │       │       └── winnow v0.7.14
+│   │       ├── proc-macro2 v1.0.103 (*)
+│   │       ├── quote v1.0.42 (*)
+│   │       └── syn v2.0.111 (*)
+│   ├── axdriver_base v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   ├── axdriver_block v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   ├── axdriver_base v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   └── log v0.4.29
+│   ├── axdriver_display v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   └── axdriver_base v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   ├── axdriver_net v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   ├── axdriver_base v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   ├── log v0.4.29
+│   │   └── spin v0.9.8
+│   │       └── lock_api v0.4.14
+│   │           └── scopeguard v1.2.0
+│   ├── axdriver_pci v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   └── virtio-drivers v0.7.5
+│   │       ├── bitflags v2.10.0
+│   │       ├── enumn v0.1.14 (proc-macro)
+│   │       │   ├── proc-macro2 v1.0.103 (*)
+│   │       │   ├── quote v1.0.42 (*)
+│   │       │   └── syn v2.0.111 (*)
+│   │       ├── log v0.4.29
+│   │       └── zerocopy v0.7.35
+│   │           ├── byteorder v1.5.0
+│   │           └── zerocopy-derive v0.7.35 (proc-macro)
+│   │               ├── proc-macro2 v1.0.103 (*)
+│   │               ├── quote v1.0.42 (*)
+│   │               └── syn v2.0.111 (*)
+│   ├── axdriver_virtio v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   ├── axdriver_base v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86)
+│   │   ├── axdriver_block v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86) (*)
+│   │   ├── axdriver_net v0.1.2 (https://github.com/arceos-org/axdriver_crates.git?tag=dev-v01#16f1ae86) (*)
+│   │   ├── log v0.4.29
+│   │   └── virtio-drivers v0.7.5 (*)
+│   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal)
+│   │   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   ├── axcpu v0.3.0 (https://github.com/arceos-org/axcpu.git?tag=dev-v03#72ef3859)
+│   │   │   ├── axbacktrace v0.1.1
+│   │   │   │   ├── cfg-if v1.0.4
+│   │   │   │   ├── log v0.4.29
+│   │   │   │   └── spin v0.10.0
+│   │   │   │       └── lock_api v0.4.14 (*)
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── lazyinit v0.2.2
+│   │   │   ├── linkme v0.3.35
+│   │   │   │   └── linkme-impl v0.3.35 (proc-macro)
+│   │   │   │       ├── proc-macro2 v1.0.103 (*)
+│   │   │   │       ├── quote v1.0.42 (*)
+│   │   │   │       └── syn v2.0.111 (*)
+│   │   │   ├── log v0.4.29
+│   │   │   ├── memory_addr v0.4.1
+│   │   │   ├── page_table_entry v0.5.7
+│   │   │   │   ├── bitflags v2.10.0
+│   │   │   │   ├── memory_addr v0.4.1
+│   │   │   │   └── x86_64 v0.15.4
+│   │   │   │       ├── bit_field v0.10.3
+│   │   │   │       ├── bitflags v2.10.0
+│   │   │   │       ├── const_fn v0.4.11 (proc-macro)
+│   │   │   │       ├── rustversion v1.0.22 (proc-macro)
+│   │   │   │       └── volatile v0.4.6
+│   │   │   ├── percpu v0.2.0
+│   │   │   │   ├── cfg-if v1.0.4
+│   │   │   │   ├── kernel_guard v0.1.3 (*)
+│   │   │   │   ├── percpu_macros v0.2.0 (proc-macro)
+│   │   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   │   └── syn v2.0.111 (*)
+│   │   │   │   ├── spin v0.9.8 (*)
+│   │   │   │   └── x86 v0.52.0
+│   │   │   │       ├── bit_field v0.10.3
+│   │   │   │       ├── bitflags v1.3.2
+│   │   │   │       └── raw-cpuid v10.7.0
+│   │   │   │           └── bitflags v1.3.2
+│   │   │   ├── static_assertions v1.1.0
+│   │   │   ├── x86 v0.52.0 (*)
+│   │   │   └── x86_64 v0.15.4 (*)
+│   │   ├── axplat v0.3.0 (https://github.com/arceos-org/axplat_crates.git?tag=dev-v03#0df0713b)
+│   │   │   ├── axplat-macros v0.1.0 (proc-macro) (https://github.com/arceos-org/axplat_crates.git?tag=dev-v03#0df0713b)
+│   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   └── syn v2.0.111 (*)
+│   │   │   ├── bitflags v2.10.0
+│   │   │   ├── const-str v0.6.4
+│   │   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   │   ├── handler_table v0.1.2
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   ├── memory_addr v0.4.1
+│   │   │   └── percpu v0.2.0 (*)
+│   │   ├── cfg-if v1.0.4
+│   │   ├── fdt-parser v0.4.18
+│   │   ├── heapless v0.9.2
+│   │   │   ├── hash32 v0.3.1
+│   │   │   │   └── byteorder v1.5.0
+│   │   │   └── stable_deref_trait v1.2.1
+│   │   ├── kernel_guard v0.1.3 (*)
+│   │   ├── lazyinit v0.2.2
+│   │   ├── linkme v0.3.35 (*)
+│   │   ├── log v0.4.29
+│   │   ├── memory_addr v0.4.1
+│   │   ├── page_table_multiarch v0.5.7 (https://github.com/arceos-org/page_table_multiarch.git?tag=dev-v05#4594a765)
+│   │   │   ├── arrayvec v0.7.6
+│   │   │   ├── axerrno v0.1.2 (*)
+│   │   │   ├── bitmaps v3.2.1
+│   │   │   ├── log v0.4.29
+│   │   │   ├── memory_addr v0.4.1
+│   │   │   ├── page_table_entry v0.5.7 (*)
+│   │   │   └── x86 v0.52.0 (*)
+│   │   └── percpu v0.2.0 (*)
+│   │   [build-dependencies]
+│   │   └── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   ├── cfg-if v1.0.4
+│   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   ├── log v0.4.29
+│   └── smallvec v1.15.1
+├── axerrno v0.2.2 (*)
+├── axfeat v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/api/axfeat)
+│   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   ├── axbacktrace v0.1.1 (*)
+│   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs)
+│   │   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   │   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   │   ├── axerrno v0.2.2 (*)
+│   │   ├── axfs-ng-vfs v0.1.0
+│   │   │   ├── axerrno v0.2.2 (*)
+│   │   │   ├── axpoll v0.1.0
+│   │   │   │   ├── bitflags v2.10.0
+│   │   │   │   ├── linux-raw-sys v0.11.0
+│   │   │   │   └── spin v0.10.0 (*)
+│   │   │   ├── bitflags v2.10.0
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── hashbrown v0.15.5
+│   │   │   │   ├── allocator-api2 v0.2.21
+│   │   │   │   ├── equivalent v1.0.2
+│   │   │   │   └── foldhash v0.1.5
+│   │   │   ├── inherit-methods-macro v0.1.0 (proc-macro)
+│   │   │   │   ├── darling v0.13.4
+│   │   │   │   │   ├── darling_core v0.13.4
+│   │   │   │   │   │   ├── fnv v1.0.7
+│   │   │   │   │   │   ├── ident_case v1.0.1
+│   │   │   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   │   │   ├── strsim v0.10.0
+│   │   │   │   │   │   └── syn v1.0.109 (*)
+│   │   │   │   │   └── darling_macro v0.13.4 (proc-macro)
+│   │   │   │   │       ├── darling_core v0.13.4 (*)
+│   │   │   │   │       ├── quote v1.0.42 (*)
+│   │   │   │   │       └── syn v1.0.109 (*)
+│   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   └── syn v1.0.109 (*)
+│   │   │   ├── log v0.4.29
+│   │   │   ├── smallvec v1.15.1
+│   │   │   └── spin v0.10.0 (*)
+│   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   ├── axio v0.3.0-pre.1
+│   │   │   ├── axerrno v0.2.2 (*)
+│   │   │   ├── heapless v0.9.2 (*)
+│   │   │   └── memchr v2.7.6
+│   │   │   [build-dependencies]
+│   │   │   └── autocfg v1.5.0
+│   │   ├── axpoll v0.1.0 (*)
+│   │   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync)
+│   │   │   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask)
+│   │   │   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   │   │   ├── axerrno v0.2.2 (*)
+│   │   │   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   │   │   ├── axpoll v0.1.0 (*)
+│   │   │   │   ├── axsched v0.3.1
+│   │   │   │   │   └── linked_list_r4l v0.3.0
+│   │   │   │   ├── cfg-if v1.0.4
+│   │   │   │   ├── cpumask v0.1.0
+│   │   │   │   │   └── bitmaps v3.2.1
+│   │   │   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   │   │   ├── event-listener v5.4.1
+│   │   │   │   │   ├── concurrent-queue v2.5.0
+│   │   │   │   │   │   └── crossbeam-utils v0.8.21
+│   │   │   │   │   └── pin-project-lite v0.2.16
+│   │   │   │   ├── extern-trait v0.2.0 (proc-macro)
+│   │   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   │   └── syn v2.0.111 (*)
+│   │   │   │   ├── futures-util v0.3.31
+│   │   │   │   │   ├── futures-core v0.3.31
+│   │   │   │   │   ├── futures-macro v0.3.31 (proc-macro)
+│   │   │   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   │   │   └── syn v2.0.111 (*)
+│   │   │   │   │   ├── futures-task v0.3.31
+│   │   │   │   │   ├── pin-project-lite v0.2.16
+│   │   │   │   │   └── pin-utils v0.1.0
+│   │   │   │   ├── kernel_guard v0.1.3 (*)
+│   │   │   │   ├── kspin v0.1.1 (*)
+│   │   │   │   ├── lazyinit v0.2.2
+│   │   │   │   ├── log v0.4.29
+│   │   │   │   ├── memory_addr v0.4.1
+│   │   │   │   └── percpu v0.2.0 (*)
+│   │   │   ├── event-listener v5.4.1 (*)
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   └── lock_api v0.4.14 (*)
+│   │   ├── bitflags v2.10.0
+│   │   ├── cfg-if v1.0.4
+│   │   ├── chrono v0.4.42
+│   │   │   └── num-traits v0.2.19
+│   │   │       [build-dependencies]
+│   │   │       └── autocfg v1.5.0
+│   │   ├── intrusive-collections v0.9.7
+│   │   │   └── memoffset v0.9.1
+│   │   │       [build-dependencies]
+│   │   │       └── autocfg v1.5.0
+│   │   ├── kspin v0.1.1 (*)
+│   │   ├── log v0.4.29
+│   │   ├── lru v0.16.2
+│   │   │   └── hashbrown v0.16.1
+│   │   │       ├── allocator-api2 v0.2.21
+│   │   │       ├── equivalent v1.0.2
+│   │   │       └── foldhash v0.2.0
+│   │   ├── lwext4_rust v0.2.0 (https://github.com/Starry-OS/lwext4_rust.git?rev=033fa2c#033fa2cc)
+│   │   │   └── log v0.4.29
+│   │   │   [build-dependencies]
+│   │   │   └── bindgen v0.72.1
+│   │   │       ├── bitflags v2.10.0
+│   │   │       ├── cexpr v0.6.0
+│   │   │       │   └── nom v7.1.3
+│   │   │       │       ├── memchr v2.7.6
+│   │   │       │       └── minimal-lexical v0.2.1
+│   │   │       ├── clang-sys v1.8.1
+│   │   │       │   ├── glob v0.3.3
+│   │   │       │   ├── libc v0.2.178
+│   │   │       │   └── libloading v0.8.9
+│   │   │       │       └── cfg-if v1.0.4
+│   │   │       │   [build-dependencies]
+│   │   │       │   └── glob v0.3.3
+│   │   │       ├── itertools v0.13.0
+│   │   │       │   └── either v1.15.0
+│   │   │       ├── log v0.4.29
+│   │   │       ├── prettyplease v0.2.37
+│   │   │       │   ├── proc-macro2 v1.0.103 (*)
+│   │   │       │   └── syn v2.0.111 (*)
+│   │   │       ├── proc-macro2 v1.0.103 (*)
+│   │   │       ├── quote v1.0.42 (*)
+│   │   │       ├── regex v1.12.2
+│   │   │       │   ├── regex-automata v0.4.13
+│   │   │       │   │   └── regex-syntax v0.8.8
+│   │   │       │   └── regex-syntax v0.8.8
+│   │   │       ├── rustc-hash v2.1.1
+│   │   │       ├── shlex v1.3.0
+│   │   │       └── syn v2.0.111 (*)
+│   │   ├── scope-local v0.1.0
+│   │   │   ├── percpu v0.2.0 (*)
+│   │   │   └── spin v0.9.8 (*)
+│   │   ├── slab v0.4.11
+│   │   └── spin v0.10.0 (*)
+│   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   ├── axlog v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axlog)
+│   │   ├── cfg-if v1.0.4
+│   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   ├── kspin v0.1.1 (*)
+│   │   └── log v0.4.29
+│   ├── axnet v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axnet)
+│   │   ├── async-channel v2.5.0
+│   │   │   ├── concurrent-queue v2.5.0 (*)
+│   │   │   ├── event-listener-strategy v0.5.4
+│   │   │   │   ├── event-listener v5.4.1 (*)
+│   │   │   │   └── pin-project-lite v0.2.16
+│   │   │   ├── futures-core v0.3.31
+│   │   │   └── pin-project-lite v0.2.16
+│   │   ├── async-trait v0.1.89 (proc-macro)
+│   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   ├── quote v1.0.42 (*)
+│   │   │   └── syn v2.0.111 (*)
+│   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   │   ├── axerrno v0.2.2 (*)
+│   │   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+│   │   ├── axfs-ng-vfs v0.1.0 (*)
+│   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   ├── axio v0.3.0-pre.1 (*)
+│   │   ├── axpoll v0.1.0 (*)
+│   │   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   │   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+│   │   ├── bitflags v2.10.0
+│   │   ├── cfg-if v1.0.4
+│   │   ├── enum_dispatch v0.3.13 (proc-macro)
+│   │   │   ├── once_cell v1.21.3
+│   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   ├── quote v1.0.42 (*)
+│   │   │   └── syn v2.0.111 (*)
+│   │   ├── event-listener v5.4.1 (*)
+│   │   ├── hashbrown v0.16.1 (*)
+│   │   ├── lazy_static v1.5.0
+│   │   │   └── spin v0.9.8 (*)
+│   │   ├── lazyinit v0.2.2
+│   │   ├── log v0.4.29
+│   │   ├── ringbuf v0.4.8
+│   │   │   └── crossbeam-utils v0.8.21
+│   │   ├── smoltcp v0.12.0 (https://github.com/Starry-OS/smoltcp.git?rev=7401a54#7401a54b)
+│   │   │   ├── bitflags v1.3.2
+│   │   │   ├── byteorder v1.5.0
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── heapless v0.8.0
+│   │   │   │   ├── hash32 v0.3.1 (*)
+│   │   │   │   └── stable_deref_trait v1.2.1
+│   │   │   ├── log v0.4.29
+│   │   │   └── managed v0.8.0
+│   │   └── spin v0.10.0 (*)
+│   ├── axruntime v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axruntime)
+│   │   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   │   ├── axbacktrace v0.1.1 (*)
+│   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   │   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+│   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   ├── axlog v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axlog) (*)
+│   │   ├── axmm v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axmm)
+│   │   │   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   │   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   │   ├── axerrno v0.2.2 (*)
+│   │   │   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+│   │   │   ├── axfs-ng-vfs v0.1.0 (*)
+│   │   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   │   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   │   │   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+│   │   │   ├── enum_dispatch v0.3.13 (proc-macro) (*)
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   ├── lazyinit v0.2.2
+│   │   │   ├── log v0.4.29
+│   │   │   ├── memory_addr v0.4.1
+│   │   │   ├── memory_set v0.4.1
+│   │   │   │   ├── axerrno v0.1.2 (*)
+│   │   │   │   └── memory_addr v0.4.1
+│   │   │   └── page_table_multiarch v0.5.7 (https://github.com/arceos-org/page_table_multiarch.git?tag=dev-v05#4594a765) (*)
+│   │   ├── axnet v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axnet) (*)
+│   │   ├── axplat v0.3.0 (https://github.com/arceos-org/axplat_crates.git?tag=dev-v03#0df0713b) (*)
+│   │   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+│   │   ├── chrono v0.4.42 (*)
+│   │   ├── crate_interface v0.1.4 (proc-macro) (*)
+│   │   ├── ctor_bare v0.2.1
+│   │   │   └── ctor_bare_macros v0.2.1 (proc-macro)
+│   │   │       ├── proc-macro2 v1.0.103 (*)
+│   │   │       ├── quote v1.0.42 (*)
+│   │   │       └── syn v2.0.111 (*)
+│   │   ├── indoc v2.0.7 (proc-macro)
+│   │   │   [build-dependencies]
+│   │   │   └── rustversion v1.0.22 (proc-macro)
+│   │   └── percpu v0.2.0 (*)
+│   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   └── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+├── axlog v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axlog) (*)
+├── axruntime v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axruntime) (*)
+├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+├── cfg-if v1.0.4
+├── linkme v0.3.35 (*)
+├── linux-raw-sys v0.11.0
+├── starry-api v0.1.0 (/home/chyyuu/thecodes/StarryOS/api)
+│   ├── axalloc v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axalloc) (*)
+│   ├── axbacktrace v0.1.1 (*)
+│   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   ├── axdisplay v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdisplay)
+│   │   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   │   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   │   ├── lazyinit v0.2.2
+│   │   └── log v0.4.29
+│   ├── axdriver v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axdriver) (*)
+│   ├── axerrno v0.2.2 (*)
+│   ├── axfeat v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/api/axfeat) (*)
+│   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+│   ├── axfs-ng-vfs v0.1.0 (*)
+│   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   ├── axio v0.3.0-pre.1 (*)
+│   ├── axlog v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axlog) (*)
+│   ├── axmm v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axmm) (*)
+│   ├── axnet v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axnet) (*)
+│   ├── axpoll v0.1.0 (*)
+│   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+│   ├── bitflags v2.10.0
+│   ├── bitmaps v3.2.1
+│   ├── bytemuck v1.24.0
+│   │   └── bytemuck_derive v1.10.2 (proc-macro)
+│   │       ├── proc-macro2 v1.0.103 (*)
+│   │       ├── quote v1.0.42 (*)
+│   │       └── syn v2.0.111 (*)
+│   ├── cfg-if v1.0.4
+│   ├── chrono v0.4.42 (*)
+│   ├── downcast-rs v2.0.2
+│   ├── event-listener v5.4.1 (*)
+│   ├── flatten_objects v0.2.4
+│   │   └── bitmaps v3.2.1
+│   ├── hashbrown v0.16.1 (*)
+│   ├── indoc v2.0.7 (proc-macro) (*)
+│   ├── inherit-methods-macro v0.1.0 (proc-macro) (*)
+│   ├── kspin v0.1.1 (*)
+│   ├── lazy_static v1.5.0 (*)
+│   ├── linkme v0.3.35 (*)
+│   ├── linux-raw-sys v0.11.0
+│   ├── memory_addr v0.4.1
+│   ├── num_enum v0.7.5
+│   │   ├── num_enum_derive v0.7.5 (proc-macro)
+│   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   ├── quote v1.0.42 (*)
+│   │   │   └── syn v2.0.111 (*)
+│   │   └── rustversion v1.0.22 (proc-macro)
+│   ├── rand v0.9.2
+│   │   └── rand_core v0.9.3
+│   ├── ringbuf v0.4.8 (*)
+│   ├── scope-local v0.1.0 (*)
+│   ├── slab v0.4.11
+│   ├── spin v0.10.0 (*)
+│   ├── starry-core v0.1.0 (/home/chyyuu/thecodes/StarryOS/core)
+│   │   ├── axbacktrace v0.1.1 (*)
+│   │   ├── axconfig v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axconfig) (*)
+│   │   ├── axerrno v0.2.2 (*)
+│   │   ├── axfeat v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/api/axfeat) (*)
+│   │   ├── axfs v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axfs) (*)
+│   │   ├── axfs-ng-vfs v0.1.0 (*)
+│   │   ├── axhal v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axhal) (*)
+│   │   ├── axio v0.3.0-pre.1 (*)
+│   │   ├── axlog v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axlog) (*)
+│   │   ├── axmm v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axmm) (*)
+│   │   ├── axpoll v0.1.0 (*)
+│   │   ├── axsync v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axsync) (*)
+│   │   ├── axtask v0.2.0 (/home/chyyuu/thecodes/StarryOS/arceos/modules/axtask) (*)
+│   │   ├── bitflags v2.10.0
+│   │   ├── bytemuck v1.24.0 (*)
+│   │   ├── cfg-if v1.0.4
+│   │   ├── event-listener v5.4.1 (*)
+│   │   ├── extern-trait v0.2.0 (proc-macro) (*)
+│   │   ├── hashbrown v0.16.1 (*)
+│   │   ├── inherit-methods-macro v0.1.0 (proc-macro) (*)
+│   │   ├── kernel-elf-parser v0.3.3 (https://github.com/Starry-OS/kernel_elf_parser.git?rev=fdcce74#fdcce740)
+│   │   │   ├── xmas-elf v0.9.1
+│   │   │   │   └── zero v0.1.3
+│   │   │   ├── zero v0.1.3
+│   │   │   └── zerocopy v0.8.31
+│   │   │       └── zerocopy-derive v0.8.31 (proc-macro)
+│   │   │           ├── proc-macro2 v1.0.103 (*)
+│   │   │           ├── quote v1.0.42 (*)
+│   │   │           └── syn v2.0.111 (*)
+│   │   ├── kernel_guard v0.1.3 (*)
+│   │   ├── kspin v0.1.1 (*)
+│   │   ├── lazy_static v1.5.0 (*)
+│   │   ├── linkme v0.3.35 (*)
+│   │   ├── linux-raw-sys v0.11.0
+│   │   ├── lock_api v0.4.14 (*)
+│   │   ├── memory_addr v0.4.1
+│   │   ├── ouroboros v0.18.5
+│   │   │   ├── aliasable v0.1.3
+│   │   │   ├── ouroboros_macro v0.18.5 (proc-macro)
+│   │   │   │   ├── heck v0.4.1
+│   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   ├── proc-macro2-diagnostics v0.10.1
+│   │   │   │   │   ├── proc-macro2 v1.0.103 (*)
+│   │   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   │   ├── syn v2.0.111 (*)
+│   │   │   │   │   └── yansi v1.0.1
+│   │   │   │   │   [build-dependencies]
+│   │   │   │   │   └── version_check v0.9.5
+│   │   │   │   ├── quote v1.0.42 (*)
+│   │   │   │   └── syn v2.0.111 (*)
+│   │   │   └── static_assertions v1.1.0
+│   │   ├── percpu v0.2.0 (*)
+│   │   ├── scope-local v0.1.0 (*)
+│   │   ├── slab v0.4.11
+│   │   ├── spin v0.10.0 (*)
+│   │   ├── starry-process v0.2.0
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   ├── lazyinit v0.2.2
+│   │   │   └── weak-map v0.1.2
+│   │   ├── starry-signal v0.2.3 (https://github.com/Starry-OS/starry-signal.git?tag=dev-v02#0597c169)
+│   │   │   ├── axcpu v0.3.0 (https://github.com/arceos-org/axcpu.git?tag=dev-v03#72ef3859) (*)
+│   │   │   ├── bitflags v2.10.0
+│   │   │   ├── cfg-if v1.0.4
+│   │   │   ├── derive_more v2.1.0
+│   │   │   │   └── derive_more-impl v2.1.0 (proc-macro)
+│   │   │   │       ├── convert_case v0.10.0
+│   │   │   │       │   └── unicode-segmentation v1.12.0
+│   │   │   │       ├── proc-macro2 v1.0.103 (*)
+│   │   │   │       ├── quote v1.0.42 (*)
+│   │   │   │       ├── syn v2.0.111 (*)
+│   │   │   │       └── unicode-xid v0.2.6
+│   │   │   │       [build-dependencies]
+│   │   │   │       └── rustc_version v0.4.1
+│   │   │   │           └── semver v1.0.27
+│   │   │   ├── event-listener v5.4.1 (*)
+│   │   │   ├── kspin v0.1.1 (*)
+│   │   │   ├── linux-raw-sys v0.11.0
+│   │   │   ├── log v0.4.29
+│   │   │   ├── starry-vm v0.2.0
+│   │   │   │   ├── axerrno v0.2.2 (*)
+│   │   │   │   ├── bytemuck v1.24.0 (*)
+│   │   │   │   └── extern-trait v0.2.0 (proc-macro) (*)
+│   │   │   └── strum v0.27.2 (*)
+│   │   ├── starry-vm v0.2.0 (*)
+│   │   ├── strum v0.27.2 (*)
+│   │   ├── uluru v3.1.0
+│   │   │   └── arrayvec v0.7.6
+│   │   ├── weak-map v0.1.2
+│   │   └── xmas-elf v0.9.1 (*)
+│   ├── starry-process v0.2.0 (*)
+│   ├── starry-signal v0.2.3 (https://github.com/Starry-OS/starry-signal.git?tag=dev-v02#0597c169) (*)
+│   ├── starry-vm v0.2.0 (*)
+│   ├── syscalls v0.7.0 (https://github.com/Starry-OS/syscalls.git?rev=efac241#efac241a)
+│   ├── x86 v0.52.0 (*)
+│   └── zerocopy v0.8.31 (*)
+├── starry-core v0.1.0 (/home/chyyuu/thecodes/StarryOS/core) (*)
+├── starry-process v0.2.0 (*)
+└── starry-signal v0.2.3 (https://github.com/Starry-OS/starry-signal.git?tag=dev-v02#0597c169) (*)
