@@ -7,12 +7,53 @@ Give the dependency info of the node in mermaid-format file.
 # run
 ```
 ./cargotree2mermaid.py -h
-usage: cargotree2mermaid.py [-h] [-i INPUT] [-b BLACKLIST] [-o OUTPUT] [-w WHITE] [--direction {TD,TB,LR,RL,BT}]
-...
+usage: cargotree2mermaid.py [-h] [-i INPUT] [-b BLACKLIST] [-o OUTPUT] [-w WHITE]
+                            [--direction {TD,TB,LR,RL,BT}]
+
+Convert cargo tree output to a Mermaid dependency graph
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Path to cargo tree output file
+  -b BLACKLIST, --blacklist BLACKLIST
+                        Blacklist file path; crate names separated by commas or whitespace
+  -o OUTPUT, --output OUTPUT
+                        Mermaid output file path; print to screen if not provided
+  -w WHITE, --white WHITE
+                        Whitelist output file path; crates in cargo tree but not in blacklist
+  --direction {TD,TB,LR,RL,BT}
+                        Mermaid graph direction
+
 
 ./cargotree2mermaid.py -i ./example/crates-dep.txt -b ./example/blacklist.txt -o ./example/crates-dep.mmd -w ./example/whitelist.txt
 # You can check the mermaid file ./example/crates-dep.mmd and whitelist file ./example/whitelist.txt
 # If -o is not provided, mermaid output will be printed to screen
+
+# build png from mmd
+mmdc -s 4 -i crates-dep.mmd -o crates-dep.png
+#if no mmdc, install it: npm install -g @mermaid-js/mermaid-cli
+
+#show png file
+feh crates-dep.png
+#if no feh, install it: sudo apt install feh -y
+
+
+./mermaid_level_nodes.py -h
+usage: mermaid_level_nodes.py [-h] -i INPUT -n LEVEL (-u | -d) [-o OUTPUT]
+
+Extract node list at a specific dependency level from Mermaid graph
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Mermaid dependency graph file path
+  -n LEVEL, --level LEVEL
+                        Dependency level (NUM >= 0)
+  -u, --up              Upward dependency level (default direction)
+  -d, --down            Downward dependency level (reversed direction)
+  -o OUTPUT, --output OUTPUT
+                        Output file path; print to screen if not provided
 
 ./mermaid_level_nodes.py -i ./example/crates-dep.mmd -n 2 -u
 # Output file defaults to ./example/crates-dep.up.level2.txt
@@ -25,13 +66,13 @@ usage: cargotree2mermaid.py [-h] [-i INPUT] [-b BLACKLIST] [-o OUTPUT] [-w WHITE
 # If -o is not provided, output will be printed to screen
 ```
 # example
-The crates-dep.txt is from https://github.com/Starry-OS/StarryOS
 
 ```
+# Produce crates-dep.txt is from https://github.com/Starry-OS/StarryOS
+# setup rust/c development env for rust os, rust/c app...
+
 git clone git@github.com:Starry-OS/StarryOS.git
 cd StarryOS
-# setup development env ...
-
 cargo tree >crates-dep.txt
 
 # use cargotree2mermaid.py -i SOME-PATH/crates-dep.txt ...
