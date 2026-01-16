@@ -138,3 +138,11 @@ handler_table
 lazyinit
 scope-local
 smoltcp
+allocator-api2
+inherit-methods-macro
+intrusive-collections
+lock_api
+pin-project-lite
+rlsf
+slab
+spin

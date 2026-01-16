@@ -69,6 +69,7 @@ def parse_cargo_tree(lines, blacklist):
     dependencies = []
     seen = set()
     nodes = {}
+    crates = set()
 
     for line in lines:
         parsed = _parse_line(line)
@@ -84,6 +85,7 @@ def parse_cargo_tree(lines, blacklist):
 
         if node["is_crate"]:
             crate_name = node["label"].split()[0]
+            crates.add(crate_name)
             if crate_name in blacklist:
                 stack.append(node)
                 continue
@@ -103,7 +105,7 @@ def parse_cargo_tree(lines, blacklist):
         nodes.setdefault(node["id"], node["label"])
         stack.append(node)
 
-    return dependencies, nodes
+    return dependencies, nodes, crates
 
 def main():
     parser = argparse.ArgumentParser(
@@ -128,6 +130,12 @@ def main():
         help="Mermaid 输出文件路径",
     )
     parser.add_argument(
+        "-w",
+        "--white",
+        default=None,
+        help="白名单输出文件路径，输出 cargo tree 中不在黑名单的 crate 名",
+    )
+    parser.add_argument(
         "--direction",
         default="TD",
         choices=["TD", "TB", "LR", "RL", "BT"],
@@ -145,7 +153,7 @@ def main():
         items = re.split(r"[,\s]+", content.strip())
         blacklist = {item for item in items if item}
 
-    dependencies, nodes = parse_cargo_tree(lines, blacklist)
+    dependencies, nodes, crates = parse_cargo_tree(lines, blacklist)
 
     mermaid_lines = [f"graph {args.direction}"]
     for parent, child in dependencies:
@@ -155,6 +163,11 @@ def main():
 
     with open(args.output, "w", encoding="utf-8") as f:
         f.write("\n".join(mermaid_lines) + "\n")
+
+    if args.white:
+        whitelist = sorted(crate for crate in crates if crate not in blacklist)
+        with open(args.white, "w", encoding="utf-8") as f:
+            f.write("\n".join(whitelist) + "\n")
 
     print(f"转换完成！依赖关系图已保存为 {args.output}")
 
