@@ -347,3 +347,4 @@ pci_types
 nb
 smccc
 volatile-macro
+void
