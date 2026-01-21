@@ -151,7 +151,14 @@ def main():
         with open(args.blacklist, "r", encoding="utf-8") as f:
             content = f.read()
         items = re.split(r"[,\s]+", content.strip())
-        blacklist = {item for item in items if item}
+        for item in items:
+            if not item:
+                continue
+            blacklist.add(item)
+            if "_" in item:
+                blacklist.add(item.replace("_", "-"))
+            if "-" in item:
+                blacklist.add(item.replace("-", "_"))
 
     dependencies, nodes, crates = parse_cargo_tree(lines, blacklist)
 
